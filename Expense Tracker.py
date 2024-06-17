@@ -16,7 +16,12 @@ def save_expenses(expenses):
 
 # Function to add a new expense
 def add_expense():
-    amount = float(input("Enter the amount spent: "))
+    while(True):
+        try:
+            amount = float(input("Enter the amount spent: "))
+            break
+        except:
+            print("Invalid input. Please enter a valid amount.")
     description = input("Enter a brief description: ")
     category = input("Enter the category (e.g., food, transportation, entertainment): ")
     date = datetime.now().strftime('%Y-%m-%d')
